@@ -324,7 +324,7 @@ const todayISO=()=>new Date().toISOString().slice(0,10);
 const GROWTH=[{m:2,lo:3.0,hi:4.5},{m:3,lo:4.5,hi:6.9},{m:4,lo:5.8,hi:8.8},{m:5,lo:7.0,hi:10.8},{m:6,lo:7.8,hi:12.7},{m:9,lo:10.0,hi:15.0},{m:12,lo:10.5,hi:16.5},{m:18,lo:11.0,hi:17.0}];
 function bandForAge(months){if(months<=GROWTH[0].m)return GROWTH[0];for(let i=0;i<GROWTH.length-1;i++){if(months>=GROWTH[i].m&&months<=GROWTH[i+1].m){const a=GROWTH[i],b=GROWTH[i+1];const f=(months-a.m)/(b.m-a.m);return{lo:a.lo+(b.lo-a.lo)*f,hi:a.hi+(b.hi-a.hi)*f};}}return GROWTH[GROWTH.length-1];}
 function ageMonths(){const n=new Date();let m=(n.getFullYear()-BIRTH.getFullYear())*12+(n.getMonth()-BIRTH.getMonth());if(n.getDate()<BIRTH.getDate())m--;return Math.max(0,m+(n.getDate()-BIRTH.getDate())/30);}
-function kcalPerKg(months){if(months<6)return 101;if(months<12)return 80;return 62;}
+function kcalPerKg(months){if(months<6)return 101;if(months<12)return 72;return 62;}
 function phaseLabel(months){if(months<6)return 'štěně do 6 měsíců';if(months<12)return 'štěně 6–12 měsíců';return 'dospělý';}
 const am=ageMonths();
 el('age-line').textContent='SBT · '+Math.floor(am)+' měsíců · '+phaseLabel(am);
