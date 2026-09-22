@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Igor">
+<meta name="theme-color" content="#0d0d0f">
+<title>Igor</title>
+<link rel="apple-touch-icon" href="data:image/png;base64,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"/>
+<link rel="icon" type="image/png" href="data:image/png;base64,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"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/tabler-icons.min.css">
+<style>
+:root{
+  --bg:#0d0d0f; --card:#1a1a1e; --ink:#f0eef2; --ink2:#a8a5b0; --ink3:#6f6c78;
+  --line:#2a2a30; --line2:#3a3a42;
+  --info-bg:#1e2a3a; --info:#9ec5f0; --info-line:#2c3f56;
+  --warn-bg:#332b1c; --warn:#f0d29e; --warn-line:#4a3d24;
+  --ok-bg:#1d2e23; --ok:#a5e0b8; --ok-line:#2c4636;
+  --pink-bg:#321f2b; --pink:#f0a8cd; --pink-line:#4a2c3e;
+  --danger:#f0a08f;
+  --rad-sm:8px; --rad-md:12px; --rad-lg:16px;
+}
+*{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;}
+.app{max-width:480px; margin:0 auto; padding:calc(1rem + env(safe-area-inset-top)) 1rem 6rem; min-height:100vh;}
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+input,select,button,textarea{font-family:inherit; font-size:16px;}
+input[type=text],input[type=date],input[type=number],select,textarea{width:100%; padding:10px 12px; border:1px solid var(--line2); border-radius:var(--rad-sm); background:var(--card); color:var(--ink);}
+textarea{min-height:70px; resize:vertical;}
+button{cursor:pointer; border:1px solid var(--line2); background:var(--card); color:var(--ink); border-radius:var(--rad-sm); padding:8px 12px;}
+.fl{display:block; font-size:13px; color:var(--ink2); margin-bottom:4px;}
+.head{display:flex; align-items:center; gap:12px; margin-bottom:1rem;}
+.avatar{width:40px; height:40px; border-radius:12px; flex-shrink:0; background-size:cover; background-position:center;}
+.saved{margin-left:auto; font-size:11px; color:var(--ink3); display:flex; align-items:center; gap:4px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--ok);}
+.box{background:var(--card); border:1px solid var(--line); border-radius:var(--rad-lg); padding:.85rem 1.1rem; margin-bottom:1rem;}
+.budget{background:var(--info-bg); border-radius:var(--rad-lg); padding:.9rem 1.1rem; margin-bottom:1.25rem;}
+.budget .row{display:flex; justify-content:space-between; align-items:baseline;}
+.budget .lbl{font-size:13px; color:var(--info);}
+.budget .val{font-size:15px; font-weight:600; color:var(--info);}
+.bar-track{height:8px; background:var(--line2); border-radius:99px; margin:8px 0 4px; overflow:hidden;}
+.bar-fill{height:100%; width:0%; background:var(--info); transition:width .25s;}
+.left{font-size:12px; color:var(--info);}
+.sec-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;}
+.sec-title{font-size:13px; font-weight:600; margin:0;}
+.item{border:1px solid var(--line); border-radius:var(--rad-lg); padding:.85rem 1rem; margin-bottom:10px; background:var(--card); transition:background .2s,border-color .2s;}
+.item.done{background:var(--ok-bg); border-color:var(--ok-line);}
+.item.snack{border-style:dashed;} .item.snack.done{border-style:solid;}
+.item-head{display:flex; align-items:center; gap:10px; margin-bottom:8px;}
+.chk{width:26px;height:26px;border-radius:50%;border:1.5px solid var(--line2);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:transparent;font-size:14px;color:var(--ink2);padding:0;}
+.chk.on{background:var(--ok);border-color:var(--ok);color:#0d0d0f;}
+.item-name{flex:1;border:none;background:transparent;font-size:15px;font-weight:600;padding:2px 0;min-width:0;width:100%;color:var(--ink);}
+.item.done .item-name{color:var(--ok);}
+.item-name:focus{outline:none;}
+.del{font-size:12px;padding:6px 8px;color:var(--ink2);border-color:transparent;background:transparent;flex-shrink:0;}
+.pick{display:flex;gap:6px;margin-bottom:8px;}
+.pick select{flex:1;min-width:0;font-size:13px;padding:8px 10px;}
+.comp{border-top:1px solid var(--line);margin-top:8px;padding-top:8px;}
+.comp-lbl{font-size:12px;color:var(--ink2);margin-bottom:4px;display:flex;align-items:center;gap:4px;}
+.mixtoggle{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:13px;}
+.split-row{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.split-row input[type=range]{flex:1;}
+.split-lbl{font-size:11px;color:var(--ink2);white-space:nowrap;}
+.give{background:var(--info-bg);border-radius:var(--rad-md);padding:9px 12px;margin-top:8px;}
+.give-row{display:flex;align-items:baseline;justify-content:space-between;}
+.give-row .what{font-size:13px;color:var(--info);}
+.give-row .g{font-size:19px;font-weight:600;color:var(--info);}
+.give-sub{display:flex;align-items:baseline;justify-content:space-between;margin-top:5px;padding-top:5px;border-top:1px solid rgba(255,255,255,.10);}
+.give-sub .what{font-size:12px;color:var(--info);opacity:.85;}
+.give-sub .g{font-size:14px;font-weight:600;color:var(--info);}
+.done-summary{display:flex;align-items:center;justify-content:space-between;font-size:13px;color:var(--ok);font-weight:600;gap:8px;}
+.sauce-toggle{display:flex;align-items:center;justify-content:space-between;margin-top:8px;font-size:13px;}
+.sauce-box{margin-top:8px;padding:8px 10px;background:#26262c;border-radius:var(--rad-md);}
+.sauce-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:6px;}
+.sauce-head .val{font-size:15px;font-weight:600;}
+.sauce-box input[type=range]{width:100%;}
+.sauce-rec{font-size:11px;margin-top:4px;}
+.qty-row{display:flex;align-items:center;gap:10px;margin-top:8px;}
+.stepper{display:flex;align-items:center;gap:8px;}
+.stepbtn{width:38px;height:38px;border-radius:var(--rad-md);font-size:20px;display:flex;align-items:center;justify-content:center;padding:0;}
+.qty-val{font-size:18px;font-weight:600;min-width:46px;text-align:center;}
+.qty-unit{font-size:13px;color:var(--ink2);}
+.qty-kcal{font-size:12px;color:var(--info);margin-left:auto;}
+.snack-row{display:flex;align-items:center;gap:8px;margin-top:8px;}
+.snack-row input{width:80px;}
+.snack-row .u{font-size:12px;color:var(--ink2);}
+.add-btn{width:100%;font-size:13px;margin-top:4px;margin-bottom:1.25rem;padding:10px;}
+.vbadge{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:600;}
+details{border:1px solid var(--line);border-radius:var(--rad-md);padding:.5rem .85rem;background:var(--card);}
+summary{font-size:13px;color:var(--ink2);cursor:pointer;}
+.cb{display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;margin-top:10px;}
+.cb input{width:auto;}
+.tip{font-size:11px;color:var(--ink3);margin:10px 0 0;}
+.tabbar{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 0 calc(8px + env(safe-area-inset-bottom));z-index:40;}
+.tabbtn{flex:1;background:none;border:none;display:flex;flex-direction:column;align-items:center;gap:2px;color:var(--ink3);font-size:11px;padding:4px 0;}
+.tabbtn.active{color:var(--info);}
+.tabbtn i{font-size:22px;}
+.page{display:none;} .page.active{display:block;}
+.health-item{border:1px solid var(--line);border-radius:var(--rad-lg);padding:.85rem 1rem;margin-bottom:10px;background:var(--card);}
+.hi-top{display:flex;align-items:flex-start;gap:10px;}
+.hi-icon{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;}
+.hi-body{flex:1;min-width:0;}
+.hi-name{font-size:15px;font-weight:600;}
+.hi-date{font-size:12px;color:var(--ink2);margin-top:2px;}
+.hi-badge{font-size:11px;font-weight:600;padding:3px 9px;border-radius:99px;white-space:nowrap;}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:50;align-items:flex-end;justify-content:center;}
+.sheet{background:var(--bg);width:100%;max-width:480px;max-height:88vh;border-radius:20px 20px 0 0;padding:1rem 1rem 2rem;overflow-y:auto;}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;}
+.note-card{border:1px solid var(--line);border-radius:var(--rad-lg);padding:.85rem 1rem;margin-bottom:10px;background:var(--card);}
+.note-title{font-size:15px;font-weight:600;border:none;background:transparent;color:var(--ink);width:100%;padding:0 0 4px;}
+.note-title:focus{outline:none;}
+.note-body{font-size:13px;color:var(--ink2);border:none;background:transparent;width:100%;resize:vertical;min-height:40px;padding:0;}
+.note-body:focus{outline:none;}
+</style>
+</head>
+<body>
+<div class="app">
+  <h2 class="sr-only">Aplikace Igor: krmeni, zdravi a poznamky. Funguje offline, data v telefonu.</h2>
+  <div class="head">
+    <div class="avatar" id="avatar"></div>
+    <div>
+      <p style="font-weight:600;font-size:16px;margin:0;">Igor</p>
+      <p style="font-size:12px;color:var(--ink2);margin:0;" id="age-line">SBT</p>
+    </div>
+    <button id="open-settings" aria-label="Nastavení" style="margin-left:auto;width:38px;height:38px;border-radius:10px;padding:0;display:flex;align-items:center;justify-content:center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></button>
+  </div>
+  <div class="saved" style="justify-content:flex-end;margin-top:-8px;margin-bottom:12px;"><span class="dot"></span><span>uloženo v telefonu</span></div>
+
+  <div class="page active" id="page-feed">
+    <div class="box">
+      <label class="fl" style="margin-bottom:6px;"><i class="ti ti-scale" style="vertical-align:-2px;margin-right:4px;"></i>Igorova váha dnes (kg)</label>
+      <div style="display:flex;gap:8px;">
+        <input type="text" id="cur-w" placeholder="např. 7,5" inputmode="decimal" autocomplete="off" style="flex:1;"/>
+        <button id="save-weight" style="white-space:nowrap;font-size:13px;background:var(--info-bg);color:var(--info);border-color:var(--info-line);"><i class="ti ti-plus"></i> Zapsat</button>
+      </div>
+      <div id="weight-verdict" style="margin-top:8px;font-size:12px;"></div>
+      <div style="border-top:1px solid var(--line);margin-top:10px;padding-top:10px;">
+        <label class="fl" style="margin-bottom:6px;"><i class="ti ti-ruler-measure" style="vertical-align:-2px;margin-right:4px;"></i>Kondice (nahmatej žebra a pas) – přesnější než váha</label>
+        <select id="bcs">
+          <option value="1">Moc hubený (žebra hodně vidět, žádný tuk)</option>
+          <option value="2">Štíhlý (žebra snadno cítit, výrazný pas)</option>
+          <option value="3" selected>Ideální (žebra cítit pod lehkým tukem, pas patrný)</option>
+          <option value="4">Při těle (žebra hůř cítit, pas mizí)</option>
+          <option value="5">Nadváha (žebra nenahmatáš, břicho kulaté)</option>
+        </select>
+        <div id="bcs-verdict" style="margin-top:8px;font-size:12px;"></div>
+      </div>
+    </div>
+    <div class="budget">
+      <div class="row"><span class="lbl">Snědeno / cíl</span><span class="val" id="kcal-line">zadej váhu</span></div>
+      <div class="bar-track"><div class="bar-fill" id="bar"></div></div>
+      <div class="left" id="left-line">zbývá —</div>
+    </div>
+    <div class="box" id="treat-meter" style="padding:.75rem 1.1rem;margin-bottom:1.25rem;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;">
+        <span style="font-size:13px;color:var(--ink2);"><i class="ti ti-bone" style="vertical-align:-2px;margin-right:4px;"></i>Pamlsky &amp; výcvik dnes</span>
+        <span style="font-size:14px;font-weight:600;" id="treat-pct">—</span>
+      </div>
+      <div class="bar-track"><div class="bar-fill" id="treat-bar" style="background:var(--ok);"></div></div>
+      <div style="font-size:12px;" id="treat-note">limit 10 % (max 15 %)</div>
+    </div>
+    <div class="box" id="water-card" style="padding:.75rem 1.1rem;margin-bottom:1.25rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:13px;color:var(--ink2);"><i class="ti ti-droplet" style="vertical-align:-2px;margin-right:4px;color:var(--info);"></i>Voda dnes</span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <button id="water-minus" class="stepbtn" style="width:32px;height:32px;font-size:16px;">−</button>
+          <span style="font-size:15px;font-weight:600;min-width:70px;text-align:center;" id="water-val">0 ml</span>
+          <button id="water-plus" class="stepbtn" style="width:32px;height:32px;font-size:16px;">+</button>
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--ink3);margin-top:6px;" id="water-note">+100 ml na klik · orientačně ~50–70 ml/kg denně</div>
+    </div>
+    <div class="sec-head">
+      <p class="sec-title"><i class="ti ti-bowl" style="vertical-align:-2px;margin-right:4px;color:var(--info);"></i>Jídla</p>
+      <div style="display:flex;gap:6px;">
+        <button id="open-history" style="font-size:12px;padding:6px 10px;"><i class="ti ti-calendar"></i> Historie</button>
+        <button id="reset-day" style="font-size:12px;padding:6px 10px;"><i class="ti ti-refresh"></i> Nový den</button>
+      </div>
+    </div>
+    <div id="meals-list"></div>
+    <button id="add-meal" class="add-btn"><i class="ti ti-plus"></i> Přidat jídlo</button>
+    <p class="sec-title" style="margin-bottom:8px;"><i class="ti ti-bone" style="vertical-align:-2px;margin-right:4px;color:var(--warn);"></i>Pamlsky &amp; dobrůtky</p>
+    <div id="treats-list"></div>
+    <button id="add-treat" class="add-btn"><i class="ti ti-plus"></i> Přidat dobrůtku</button>
+    <p class="sec-title" style="margin-bottom:8px;"><i class="ti ti-school" style="vertical-align:-2px;margin-right:4px;color:var(--ok);"></i>Na výcvik</p>
+    <div id="train-list"></div>
+    <button id="add-train" class="add-btn"><i class="ti ti-plus"></i> Přidat výcvik</button>
+  </div>
+
+  <div class="page" id="page-health">
+    <div class="sec-head" style="margin-bottom:1rem;">
+      <p style="font-size:16px;font-weight:600;margin:0;"><i class="ti ti-heartbeat" style="vertical-align:-2px;margin-right:6px;color:var(--pink);"></i>Zdraví Igora</p>
+    </div>
+
+    <div class="box" style="padding:.85rem 1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">
+        <span style="font-size:13px;font-weight:600;"><i class="ti ti-chart-line" style="vertical-align:-2px;margin-right:4px;color:var(--info);"></i>Váha v čase</span>
+        <span style="font-size:11px;color:var(--ink3);" id="wgraph-latest"></span>
+      </div>
+      <div id="weight-graph"></div>
+    </div>
+
+    <div class="box" style="padding:.85rem 1rem;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <span style="font-size:13px;font-weight:600;"><i class="ti ti-camera" style="vertical-align:-2px;margin-right:4px;color:var(--ok);"></i>Deník růstu (fotky)</span>
+        <button id="add-photo" style="font-size:12px;padding:5px 10px;"><i class="ti ti-plus"></i> Přidat fotku</button>
+      </div>
+      <input type="file" id="photo-input" accept="image/*" style="display:none;"/>
+      <div id="photos-list" style="display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;"></div>
+    </div>
+
+    <div id="health-upcoming"></div>
+    <p class="sec-title" style="margin:1.25rem 0 8px;">Vše naplánované</p>
+    <div id="health-list"></div>
+    <button id="add-health" class="add-btn"><i class="ti ti-plus"></i> Přidat záznam</button>
+    <p class="tip" style="margin-bottom:1rem;">Tip: u opakovaných věcí (odčervení, očkování) zadej interval a appka sama spočítá další termín, jakmile označíš „hotovo".</p>
+  </div>
+
+  <div class="page" id="page-notes">
+    <div class="sec-head" style="margin-bottom:1rem;">
+      <p style="font-size:16px;font-weight:600;margin:0;"><i class="ti ti-notebook" style="vertical-align:-2px;margin-right:6px;color:var(--info);"></i>Poznámky</p>
+    </div>
+    <div id="notes-list"></div>
+    <button id="add-note" class="add-btn"><i class="ti ti-plus"></i> Přidat poznámku</button>
+    <p class="tip" style="margin-bottom:1rem;">Sem si můžeš psát cokoli – cvičák (den, čas, místo), postřehy o chování, kontakty, nákupní seznam krmiva…</p>
+  </div>
+
+  <div class="overlay" id="history-overlay">
+    <div class="sheet">
+      <div class="sheet-head">
+        <p style="font-size:16px;font-weight:600;margin:0;"><i class="ti ti-calendar" style="vertical-align:-2px;margin-right:6px;color:var(--info);"></i>Historie dnů</p>
+        <button id="close-history" style="font-size:13px;padding:6px 12px;"><i class="ti ti-x"></i> Zavřít</button>
+      </div>
+      <div id="history-list"></div>
+    </div>
+  </div>
+
+  <div class="overlay" id="health-overlay">
+    <div class="sheet">
+      <div class="sheet-head">
+        <p style="font-size:16px;font-weight:600;margin:0;" id="health-sheet-title">Záznam</p>
+        <button id="close-health" style="font-size:13px;padding:6px 12px;"><i class="ti ti-x"></i> Zavřít</button>
+      </div>
+      <label class="fl">Co to je</label>
+      <select id="he-type" style="margin-bottom:12px;">
+        <option value="vaccine">💉 Očkování</option>
+        <option value="deworm">🪱 Odčervení</option>
+        <option value="flea">🐛 Odblešení / klíšťata</option>
+        <option value="pill">💊 Prášky / léky</option>
+        <option value="checkup">🩺 Kontrola u veterináře</option>
+        <option value="other">📌 Jiné</option>
+      </select>
+      <label class="fl">Název</label>
+      <input type="text" id="he-name" placeholder="např. Očkování vzteklina" style="margin-bottom:12px;" autocomplete="off"/>
+      <label class="fl">Datum (kdy to má být / bylo)</label>
+      <input type="date" id="he-date" style="margin-bottom:12px;"/>
+      <label class="fl">Opakovat každých (nech prázdné = neopakuje se)</label>
+      <div style="display:flex;gap:8px;margin-bottom:12px;">
+        <input type="number" id="he-int" placeholder="např. 3" inputmode="numeric" style="flex:1;"/>
+        <select id="he-unit" style="flex:1;">
+          <option value="d">dní</option>
+          <option value="m" selected>měsíců</option>
+          <option value="y">let</option>
+        </select>
+      </div>
+      <label class="fl">Poznámka (nepovinné)</label>
+      <textarea id="he-note" placeholder="dávkování, jméno přípravku…" style="margin-bottom:14px;"></textarea>
+      <div style="display:flex;gap:8px;">
+        <button id="he-save" style="flex:1;background:var(--info-bg);color:var(--info);border-color:var(--info-line);"><i class="ti ti-check"></i> Uložit</button>
+        <button id="he-delete" style="background:var(--card);color:var(--danger);border-color:var(--line2);"><i class="ti ti-trash"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="settings-overlay">
+    <div class="sheet">
+      <div class="sheet-head">
+        <p style="font-size:16px;font-weight:600;margin:0;"><i class="ti ti-settings" style="vertical-align:-2px;margin-right:6px;color:var(--info);"></i>Nastavení</p>
+        <button id="close-settings" style="font-size:13px;padding:6px 12px;"><i class="ti ti-x"></i> Zavřít</button>
+      </div>
+
+      <p class="sec-title" style="margin:0 0 8px;">Krmení</p>
+      <div class="box" style="padding:.85rem 1rem;">
+        <label class="fl"><i class="ti ti-run" style="vertical-align:-2px;margin-right:4px;"></i>Zátěž (upraví denní dávku)</label>
+        <select id="activity">
+          <option value="1.0">Klidový / líné dny</option>
+          <option value="1.15" selected>Normální (většina dnů)</option>
+          <option value="1.3">Aktivní (dlouhé procházky, běh)</option>
+          <option value="1.5">Výcvik / sport / hodně běhání</option>
+        </select>
+        <label class="cb" style="margin-top:14px;"><input type="checkbox" id="reserve" checked/> Nechat 10 % na pamlsky</label>
+        <label class="cb"><input type="checkbox" id="neutered"/> Kastrovaný (–10 %)</label>
+      </div>
+
+      <p class="sec-title" style="margin:1.25rem 0 8px;">Rychlé odkazy</p>
+      <button class="add-btn go-link" data-go="history" style="margin-bottom:8px;text-align:left;display:flex;align-items:center;gap:10px;"><i class="ti ti-calendar" style="color:var(--info);"></i> Historie dnů<i class="ti ti-chevron-right" style="margin-left:auto;color:var(--ink3);"></i></button>
+      <button class="add-btn go-link" data-go="graph" style="margin-bottom:8px;text-align:left;display:flex;align-items:center;gap:10px;"><i class="ti ti-chart-line" style="color:var(--info);"></i> Graf váhy v čase<i class="ti ti-chevron-right" style="margin-left:auto;color:var(--ink3);"></i></button>
+      <button class="add-btn go-link" data-go="photos" style="margin-bottom:8px;text-align:left;display:flex;align-items:center;gap:10px;"><i class="ti ti-camera" style="color:var(--ok);"></i> Deník růstu (fotky)<i class="ti ti-chevron-right" style="margin-left:auto;color:var(--ink3);"></i></button>
+      <button class="add-btn go-link" data-go="health" style="margin-bottom:8px;text-align:left;display:flex;align-items:center;gap:10px;"><i class="ti ti-heartbeat" style="color:var(--pink);"></i> Zdraví &amp; termíny<i class="ti ti-chevron-right" style="margin-left:auto;color:var(--ink3);"></i></button>
+
+      <p class="tip" style="margin-top:1rem;">Věk se počítá sám z data narození (12. 3. 2026). Den se překlápí automaticky o půlnoci. Vše uložené jen v tomto telefonu, funguje offline.</p>
+    </div>
+  </div>
+
+  <div class="tabbar">
+    <button class="tabbtn active" data-tab="feed"><i class="ti ti-bowl-spoon"></i>Krmení</button>
+    <button class="tabbtn" data-tab="health"><i class="ti ti-heartbeat"></i>Zdraví</button>
+    <button class="tabbtn" data-tab="notes"><i class="ti ti-notebook"></i>Poznámky</button>
+  </div>
+</div>
+
+<script>
+const STORE='igor_offline_v1';
+const HISTKEY='igor_offline_history_v1';
+const ICON="data:image/png;base64,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";
+const el=id=>document.getElementById(id);
+el('avatar').style.backgroundImage="url('"+ICON+"')";
+const BIRTH=new Date(2026,2,12);
+function num(v){ if(v===undefined||v===null)return 0; return parseFloat(String(v).replace(',','.'))||0; }
+const todayISO=()=>new Date().toISOString().slice(0,10);
+
+const GROWTH=[{m:2,lo:3.0,hi:4.5},{m:3,lo:4.5,hi:6.9},{m:4,lo:5.8,hi:8.8},{m:5,lo:7.0,hi:10.8},{m:6,lo:7.8,hi:12.7},{m:9,lo:10.0,hi:15.0},{m:12,lo:10.5,hi:16.5},{m:18,lo:11.0,hi:17.0}];
+function bandForAge(months){if(months<=GROWTH[0].m)return GROWTH[0];for(let i=0;i<GROWTH.length-1;i++){if(months>=GROWTH[i].m&&months<=GROWTH[i+1].m){const a=GROWTH[i],b=GROWTH[i+1];const f=(months-a.m)/(b.m-a.m);return{lo:a.lo+(b.lo-a.lo)*f,hi:a.hi+(b.hi-a.hi)*f};}}return GROWTH[GROWTH.length-1];}
+function ageMonths(){const n=new Date();let m=(n.getFullYear()-BIRTH.getFullYear())*12+(n.getMonth()-BIRTH.getMonth());if(n.getDate()<BIRTH.getDate())m--;return Math.max(0,m+(n.getDate()-BIRTH.getDate())/30);}
+function kcalPerKg(months){if(months<6)return 101;if(months<12)return 80;return 62;}
+function phaseLabel(months){if(months<6)return 'štěně do 6 měsíců';if(months<12)return 'štěně 6–12 měsíců';return 'dospělý';}
+const am=ageMonths();
+el('age-line').textContent='SBT · '+Math.floor(am)+' měsíců · '+phaseLabel(am);
+
+const GRAN=[{g:'Yoggies',name:'Kuřecí & hovězí',kcal:3.82},{g:'Yoggies',name:'Jehněčí & bílá ryba',kcal:3.67},{g:'Yoggies',name:'Active kachna & zvěřina',kcal:3.95},{g:'Yoggies',name:'Krůtí & jáhly',kcal:3.70},{g:'Yoggies',name:'Kozí & zelenina',kcal:3.67},{g:'Yoggies',name:'Ibérico vepřové',kcal:3.70},{g:'Yoggies',name:'VET Insect Derma',kcal:3.60},{g:'Yoggies',name:'VET Gastro Sensitive',kcal:3.60},{g:'Yoggies',name:'VET Veggie',kcal:3.40},{g:'Rufruf',name:'krůtí',kcal:3.60},{g:'Rufruf',name:'kuřecí',kcal:3.60},{g:'Rufruf',name:'hypoalergenní',kcal:3.55},{g:'Jiné',name:'Jiné – zadat kcal/g',kcal:null}];
+const WET=[{g:'Yoggies vařená',name:'kuřecí s rýží',kcal:1.91},{g:'Yoggies vařená',name:'krůtí s pohankou',kcal:1.56},{g:'Yoggies vařená',name:'krůtí a králičí',kcal:1.52},{g:'Yoggies vařená',name:'hovězí s quinoou',kcal:1.87},{g:'Yoggies vařená',name:'losos & ryba',kcal:2.56},{g:'Jiné',name:'Jiné – zadat kcal/g',kcal:null}];
+const CANS=[{g:'Yoggies konzerva',name:'kuřecí',kcal:1.15},{g:'Yoggies konzerva',name:'hovězí',kcal:1.20},{g:'Yoggies konzerva',name:'krůtí',kcal:1.10},{g:'Yoggies konzerva',name:'jehněčí s bramborem',kcal:1.25},{g:'Yoggies konzerva',name:'kachní s hruškou',kcal:1.20},{g:'Yoggies konzerva',name:'losos/ryba',kcal:1.30},{g:'Rufruf konzerva',name:'maso',kcal:1.20},{g:'Jiné',name:'Jiné – zadat kcal/g',kcal:null}];
+const TREATS=[
+  {g:'Rufruf',name:'Rufruf Jerky Joy (kousek)',kcalG:3.40,unit:'ks',gPer:5},
+  {g:'Rufruf',name:'Rufruf Smile Dentals mini (ks)',kcalG:3.20,unit:'ks',gPer:6},
+  {g:'Rufruf',name:'Rufruf pamlsek (kousek)',kcalG:3.40,unit:'ks',gPer:4},
+  {g:'Yoggies',name:'Yoggies Fit kostička (ks)',kcalG:3.50,unit:'ks',gPer:4},
+  {g:'Yoggies',name:'Yoggies jogurt (lžíce)',kcalG:0.80,unit:'g'},
+  {g:'MAPES sušené',name:'MAPES lososový plátek (ks)',kcalG:3.50,unit:'ks',gPer:5},
+  {g:'MAPES sušené',name:'MAPES hrtan (kousek)',kcalG:3.60,unit:'ks',gPer:8},
+  {g:'MAPES sušené',name:'MAPES králičí ouško (ks)',kcalG:3.00,unit:'ks',gPer:6},
+  {g:'MAPES sušené',name:'MAPES sušené maso',kcalG:3.30,unit:'g'},
+  {g:'MAPES sušené',name:'MAPES játra',kcalG:3.30,unit:'g'},
+  {g:'MAPES sušené',name:'MAPES plíce (dietní)',kcalG:2.80,unit:'g'},
+  {g:'Carnilove / Perrito',name:'Carnilove Jerky (kousek)',kcalG:3.30,unit:'ks',gPer:6},
+  {g:'Carnilove / Perrito',name:'Perrito Chunks (kousek)',kcalG:3.20,unit:'ks',gPer:3},
+  {g:'Ovoce a zelenina',name:'Jablko (plátek)',kcalG:0.52,unit:'ks',gPer:15},
+  {g:'Ovoce a zelenina',name:'Jahoda',kcalG:0.32,unit:'ks',gPer:12},
+  {g:'Ovoce a zelenina',name:'Banán (kolečko)',kcalG:0.89,unit:'ks',gPer:8},
+  {g:'Ovoce a zelenina',name:'Mrkev (kolečko)',kcalG:0.41,unit:'ks',gPer:8},
+  {g:'Ovoce a zelenina',name:'Borůvky (hrst)',kcalG:0.57,unit:'g'},
+  {g:'Ovoce a zelenina',name:'Meloun (kus)',kcalG:0.30,unit:'g'},
+  {g:'Ovoce a zelenina',name:'Dýně (kus)',kcalG:0.26,unit:'g'},
+  {g:'Jiné',name:'Jiné – zadat ručně',kcalG:null,unit:'g'}
+];
+const TRAIN=[
+  {g:'Rufruf',name:'Rufruf Click hovězí (váleček)',kcalG:3.50,unit:'ks',gPer:1},
+  {g:'Rufruf',name:'Rufruf Click jehněčí (váleček)',kcalG:3.50,unit:'ks',gPer:1},
+  {g:'Rufruf',name:'Rufruf Click krůtí (váleček)',kcalG:3.40,unit:'ks',gPer:1},
+  {g:'Yoggies',name:'Yoggies výcvikový pamlsek',kcalG:3.00,unit:'ks',gPer:1},
+  {g:'Z misky',name:'Granule jako odměna',kcalG:3.82,unit:'ks',gPer:0.4},
+  {g:'Z lednice',name:'Mini kousek masa',kcalG:3.30,unit:'ks',gPer:1},
+  {g:'Z lednice',name:'Mini kousek sýra',kcalG:3.50,unit:'ks',gPer:1.5},
+  {g:'Jiné',name:'Jiné drobné – zadat ručně',kcalG:null,unit:'ks',gPer:1}
+];
+const SAUCE_KCAL=0.40;
+const HTYPES={vaccine:{icon:'💉',bg:'var(--pink-bg)',col:'var(--pink)'},deworm:{icon:'🪱',bg:'var(--ok-bg)',col:'var(--ok)'},flea:{icon:'🐛',bg:'var(--warn-bg)',col:'var(--warn)'},pill:{icon:'💊',bg:'var(--info-bg)',col:'var(--info)'},checkup:{icon:'🩺',bg:'var(--info-bg)',col:'var(--info)'},other:{icon:'📌',bg:'var(--card)',col:'var(--ink2)'}};
+
+let state={dayDate:todayISO(),curW:'',reserve:true,neutered:false,activity:'1.15',bcs:'3',water:0,weightLog:[],photos:[],
+  meals:[{name:'Snídaně',cat:'gran',prod:0,mix:false,mixCat:'can',mixProd:0,mixKcal:'',mixShare:25,sauce:false,sauceG:15,done:false},{name:'Oběd',cat:'gran',prod:0,mix:true,mixCat:'can',mixProd:0,mixKcal:'',mixShare:25,sauce:false,sauceG:15,done:false},{name:'Večeře',cat:'gran',prod:0,mix:false,mixCat:'can',mixProd:0,mixKcal:'',mixShare:25,sauce:false,sauceG:15,done:false}],
+  treats:[],train:[],health:[],notes:[]};
+let meals=state.meals,treats=state.treats,train=state.train,health=state.health,notes=state.notes;
+
+function save(){state.curW=el('cur-w').value;state.reserve=el('reserve').checked;state.neutered=el('neutered').checked;state.activity=el('activity').value;state.bcs=el('bcs').value;state.meals=meals;state.treats=treats;state.train=train;state.health=health;state.notes=notes;try{localStorage.setItem(STORE,JSON.stringify(state));}catch(e){}}
+function load(){try{const s=JSON.parse(localStorage.getItem(STORE));if(s){state=Object.assign(state,s);meals=state.meals||[];treats=state.treats||[];train=state.train||[];health=state.health||[];notes=state.notes||[];if(!state.weightLog)state.weightLog=[];if(!state.photos)state.photos=[];el('cur-w').value=state.curW||'';el('reserve').checked=state.reserve!==false;el('neutered').checked=!!state.neutered;if(el('activity'))el('activity').value=state.activity||'1.15';if(el('bcs'))el('bcs').value=state.bcs||'3';}}catch(e){}}
+
+let history=[];
+function loadHistory(){try{const h=JSON.parse(localStorage.getItem(HISTKEY));if(Array.isArray(h))history=h;}catch(e){}}
+function saveHistory(){try{localStorage.setItem(HISTKEY,JSON.stringify(history));}catch(e){}}
+function snapshotToday(){const T=budgetTotal();if(!T)return null;let consumed=0,treatKcal=0;treats.forEach(it=>{const c=snackKcal(it,TREATS);if(it.done){consumed+=c;treatKcal+=c;}});train.forEach(it=>{const c=snackKcal(it,TRAIN);if(it.done){consumed+=c;treatKcal+=c;}});const MB=mealsBudget();meals.filter(m=>m.done).forEach(m=>{consumed+=(m._plannedKcal!==undefined?m._plannedKcal:MB/Math.max(1,meals.length));});return{date:state.dayDate||todayISO(),kcal:Math.round(consumed),target:Math.round(T),treatKcal:Math.round(treatKcal),treatPct:Math.round(treatKcal/T*100),weight:num(el('cur-w').value)||0};}
+function archiveDay(){const snap=snapshotToday();if(snap&&snap.kcal>0){history=history.filter(d=>d.date!==snap.date);history.unshift(snap);if(history.length>120)history=history.slice(0,120);saveHistory();}}
+function clearDay(){[meals,treats,train].forEach(arr=>arr.forEach(it=>{it.done=false;delete it._plannedKcal;if(it.grams!==undefined)it.grams='';if(it.qty!==undefined)it.qty=1;}));state.water=0;if(el('water-val'))renderWater();}
+function checkDayRollover(){const t=todayISO();if(!state.dayDate){state.dayDate=t;return;}if(state.dayDate!==t){archiveDay();clearDay();state.dayDate=t;render();save();}}
+function fmtDate(iso){const d=new Date(iso+'T00:00:00');const days=['ne','po','út','st','čt','pá','so'];return days[d.getDay()]+' '+d.getDate()+'. '+(d.getMonth()+1)+'.';}
+function renderHistory(){const wrap=el('history-list');if(!history.length){wrap.innerHTML='<p style="color:var(--ink3);font-size:13px;text-align:center;padding:2rem 0;">Zatím tu nic není.<br>Historie se plní automaticky po půlnoci nebo přes „Nový den".</p>';return;}wrap.innerHTML=history.map(d=>{let col='var(--ok)';if(d.treatPct>15)col='var(--danger)';else if(d.treatPct>10)col='var(--warn)';const pot=d.target?Math.round(d.kcal/d.target*100):0;return '<div class="item" style="margin-bottom:8px;"><div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;"><span style="font-weight:600;">'+fmtDate(d.date)+'</span><span style="font-size:13px;color:var(--ink2);">'+d.kcal+' / '+d.target+' kcal ('+pot+' %)</span></div><div style="display:flex;gap:14px;font-size:12px;color:var(--ink2);">'+(d.weight?'<span><i class="ti ti-scale" style="vertical-align:-1px;"></i> '+d.weight+' kg</span>':'')+'<span style="color:'+col+';"><i class="ti ti-bone" style="vertical-align:-1px;"></i> pamlsky '+d.treatPct+' %</span></div></div>';}).join('');}
+
+function budgetTotal(){const w=num(el('cur-w').value)||0;if(!w)return 0;let k=w*kcalPerKg(am);const act=parseFloat(el('activity').value)||1.15;k*=(act/1.15);if(el('neutered').checked)k*=0.9;const bcs=parseInt(el('bcs').value)||3;if(bcs<=1)k*=1.12;else if(bcs===2)k*=1.06;else if(bcs===4)k*=0.94;else if(bcs>=5)k*=0.88;return k;}
+function mealsBudget(){const t=budgetTotal();return el('reserve').checked?t*0.90:t;}
+function sauceRec(){const w=num(el('cur-w').value)||0;if(!w)return{lo:10,hi:25};return{lo:Math.max(5,Math.round(w*1.5/5)*5),hi:Math.max(15,Math.round(w*3.5/5)*5)};}
+function verdict(){const w=num(el('cur-w').value)||0;const vd=el('weight-verdict');if(!w){vd.innerHTML='<span style="color:var(--ink3);">Zadej váhu Igora.</span>';}else{const b=bandForAge(am);let c,bg,t,ic;if(w<b.lo*0.95){c='var(--warn)';bg='var(--warn-bg)';t='pod váhovou křivkou';ic='ti-arrow-down';}else if(w>b.hi*1.05){c='var(--warn)';bg='var(--warn-bg)';t='nad váhovou křivkou';ic='ti-arrow-up';}else{c='var(--ok)';bg='var(--ok-bg)';t='v pásmu pro věk';ic='ti-check';}vd.innerHTML='<span class="vbadge" style="color:'+c+';background:'+bg+';"><i class="ti '+ic+'"></i> '+t+'</span> <span style="color:var(--ink2);">(typicky '+b.lo.toFixed(1)+'–'+b.hi.toFixed(1)+' kg · jen orientační)</span>';}
+  bcsVerdict();}
+function bcsVerdict(){const vd=el('bcs-verdict');if(!vd)return;const bcs=parseInt(el('bcs').value)||3;let c,bg,t,note;if(bcs<=1){c='var(--danger)';bg='var(--warn-bg)';t='Moc hubený';note='appka přidá ~12 % kalorií · přiber pomalu';}else if(bcs===2){c='var(--warn)';bg='var(--warn-bg)';t='Štíhlý';note='appka přidá ~6 % · u rostoucího štěněte je lehká štíhlost OK';}else if(bcs===3){c='var(--ok)';bg='var(--ok-bg)';t='Ideální kondice';note='drž se, takhle je to správně';}else if(bcs===4){c='var(--warn)';bg='var(--warn-bg)';t='Při těle';note='appka ubere ~6 %';}else{c='var(--danger)';bg='var(--warn-bg)';t='Nadváha';note='appka ubere ~12 % · přidej pohyb';}vd.innerHTML='<span class="vbadge" style="color:'+c+';background:'+bg+';"><i class="ti ti-paw"></i> '+t+'</span> <span style="color:var(--ink2);">'+note+'</span>';}
+
+function optGroups(arr,sel){let html='',lastG='';arr.forEach((p,pi)=>{if(p.g!==lastG){if(lastG)html+='</optgroup>';html+='<optgroup label="'+p.g+'">';lastG=p.g;}html+='<option value="'+pi+'" '+(pi===sel?'selected':'')+'>'+p.name+'</option>';});html+='</optgroup>';return html;}
+function snackKcal(it,arr){const p=arr[it.prod];const kcalG=(p.kcalG!==null)?p.kcalG:(num(it.kcal)||0);if(p.unit==='ks'){return (num(it.qty)||0)*p.gPer*kcalG;}return (num(it.grams)||0)*kcalG;}
+function mixList(cat){return cat==='can'?CANS:WET;}
+function mixKcalPerG(it){const list=mixList(it.mixCat);const p=list[it.mixProd];if(p&&p.kcal!==null)return p.kcal;return num(it.mixKcal)||1.2;}
+
+function renderMeals(){const wrap=el('meals-list');wrap.innerHTML='';const rec=sauceRec();
+  meals.forEach((it,ii)=>{const div=document.createElement('div');div.className='item'+(it.done?' done':'');const list=it.cat==='gran'?GRAN:WET;
+    if(it.done){div.innerHTML='<div class="item-head"><button class="chk on" data-sec="m" data-ii="'+ii+'" data-act="check"><i class="ti ti-check"></i></button><input class="item-name" data-sec="m" data-ii="'+ii+'" data-act="name" value="'+it.name+'"/><button class="del" data-sec="m" data-ii="'+ii+'" data-act="del"><i class="ti ti-trash"></i></button></div><div class="done-summary" id="gm-'+ii+'"></div>';}
+    else{
+      const catOpts='<option value="gran" '+(it.cat==='gran'?'selected':'')+'>Granule</option><option value="wet" '+(it.cat==='wet'?'selected':'')+'>Vařené z kapsy</option>';
+      const prodOpts=optGroups(list,it.prod);
+      const baseCustom=list[it.prod]&&list[it.prod].kcal===null;
+      let mixHtml='<div class="mixtoggle"><span><i class="ti ti-plus" style="vertical-align:-2px;margin-right:4px;color:var(--ok);"></i>Přidat konzervu / vařené k tomu</span><button data-sec="m" data-ii="'+ii+'" data-act="mixtoggle" style="font-size:13px;padding:5px 12px;'+(it.mix?'background:var(--ok-bg);color:var(--ok);border-color:var(--ok-line);':'')+'">'+(it.mix?'Ano':'Ne')+'</button></div>';
+      if(it.mix){
+        const mixCatOpts='<option value="can" '+(it.mixCat==='can'?'selected':'')+'>Konzerva (maso)</option><option value="wet" '+(it.mixCat==='wet'?'selected':'')+'>Vařené z kapsy</option>';
+        const ml=mixList(it.mixCat);
+        const mixProdOpts=optGroups(ml,it.mixProd);
+        const custom=it.mixCat==='can'&&CANS[it.mixProd]&&CANS[it.mixProd].kcal===null;
+        mixHtml+='<div class="comp"><div class="comp-lbl"><i class="ti ti-cheese"></i> Doplněk k jídlu</div><div class="pick"><select data-sec="m" data-ii="'+ii+'" data-act="mixcat">'+mixCatOpts+'</select><select data-sec="m" data-ii="'+ii+'" data-act="mixprod">'+mixProdOpts+'</select></div>'+(custom?'<div class="snack-row"><span class="u">kcal/g:</span><input type="text" inputmode="decimal" autocomplete="off" data-sec="m" data-ii="'+ii+'" data-act="mixkcal" value="'+(it.mixKcal||'')+'" placeholder="1.2"/></div>':'')+'<div class="split-row"><span class="split-lbl">míň masa</span><input type="range" min="10" max="50" step="5" data-sec="m" data-ii="'+ii+'" data-act="mixshare" value="'+it.mixShare+'"/><span class="split-lbl">víc masa</span></div><div style="font-size:11px;color:var(--ink3);margin-top:2px;">maso tvoří ~'+it.mixShare+' % energie jídla (doplněk, ne náhrada)</div></div>';
+      }
+      div.innerHTML='<div class="item-head"><button class="chk" data-sec="m" data-ii="'+ii+'" data-act="check"><i class="ti ti-check"></i></button><input class="item-name" data-sec="m" data-ii="'+ii+'" data-act="name" value="'+it.name+'"/><button class="del" data-sec="m" data-ii="'+ii+'" data-act="del"><i class="ti ti-trash"></i></button></div><div class="comp-lbl" style="margin-bottom:4px;"><i class="ti ti-bowl"></i> Základ jídla</div><div class="pick"><select data-sec="m" data-ii="'+ii+'" data-act="cat">'+catOpts+'</select><select data-sec="m" data-ii="'+ii+'" data-act="prod">'+prodOpts+'</select></div>'+(baseCustom?'<div class="snack-row"><span class="u">kcal/g:</span><input type="text" inputmode="decimal" autocomplete="off" data-sec="m" data-ii="'+ii+'" data-act="basekcal" value="'+(it.baseKcal||'')+'" placeholder="'+(it.cat==='gran'?'3.7':'1.9')+'"/></div>':'')+mixHtml+'<div class="sauce-toggle"><span><i class="ti ti-droplet" style="vertical-align:-2px;margin-right:4px;color:var(--warn);"></i>Přidávám omáčku</span><button data-sec="m" data-ii="'+ii+'" data-act="saucetoggle" style="font-size:13px;padding:5px 12px;'+(it.sauce?'background:var(--warn-bg);color:var(--warn);border-color:var(--warn-line);':'')+'">'+(it.sauce?'Ano':'Ne')+'</button></div>'+(it.sauce?'<div class="sauce-box"><div class="sauce-head"><span style="font-size:13px;color:var(--ink2);">Kolik omáčky</span><span class="val">'+it.sauceG+' g</span></div><input type="range" min="0" max="60" step="5" data-sec="m" data-ii="'+ii+'" data-act="sauceg" value="'+it.sauceG+'"/><div class="sauce-rec" style="color:'+(it.sauceG>=rec.lo&&it.sauceG<=rec.hi?'var(--ok)':'var(--warn)')+';">'+((it.sauceG>=rec.lo&&it.sauceG<=rec.hi)?'<i class="ti ti-check"></i> v rozmezí':'<i class="ti ti-info-circle"></i> mimo doporučení')+' (ideálně '+rec.lo+'–'+rec.hi+' g)</div></div>':'')+'<div class="give" id="gm-'+ii+'"></div>';
+    }
+    wrap.appendChild(div);});}
+
+function renderSnackSection(arr,wrapId,sec){const wrap=el(wrapId);wrap.innerHTML='';const SRC=(sec==='t'?TREATS:TRAIN);arr.forEach((it,ii)=>{const p=SRC[it.prod];const div=document.createElement('div');div.className='item snack'+(it.done?' done':'');if(it.done){div.innerHTML='<div class="item-head"><button class="chk on" data-sec="'+sec+'" data-ii="'+ii+'" data-act="check"><i class="ti ti-check"></i></button><input class="item-name" data-sec="'+sec+'" data-ii="'+ii+'" data-act="name" value="'+it.name+'"/><button class="del" data-sec="'+sec+'" data-ii="'+ii+'" data-act="del"><i class="ti ti-trash"></i></button></div><div class="done-summary"><span>'+p.name+(p.unit==='ks'?' · '+(it.qty||0)+' ks':' · '+(it.grams||0)+' g')+'</span><span id="sk-'+sec+'-'+ii+'">0</span></div>';}else{const custom=p.kcalG===null;let qtyHtml;if(p.unit==='ks'){if(it.qty===undefined)it.qty=1;qtyHtml='<div class="qty-row"><div class="stepper"><button class="stepbtn" data-sec="'+sec+'" data-ii="'+ii+'" data-act="minus">−</button><span class="qty-val">'+it.qty+'</span><button class="stepbtn" data-sec="'+sec+'" data-ii="'+ii+'" data-act="plus">+</button></div><span class="qty-unit">ks</span><span class="qty-kcal"><span id="sk-'+sec+'-'+ii+'">0</span> kcal</span></div>';}else{qtyHtml='<div class="snack-row"><span class="u">kolik:</span><input type="text" inputmode="decimal" autocomplete="off" data-sec="'+sec+'" data-ii="'+ii+'" data-act="snackg" value="'+(it.grams||'')+'" placeholder="g"/><span class="u">g · <span id="sk-'+sec+'-'+ii+'">0</span> kcal</span></div>';}div.innerHTML='<div class="item-head"><button class="chk" data-sec="'+sec+'" data-ii="'+ii+'" data-act="check"><i class="ti ti-check"></i></button><input class="item-name" data-sec="'+sec+'" data-ii="'+ii+'" data-act="name" value="'+it.name+'"/><button class="del" data-sec="'+sec+'" data-ii="'+ii+'" data-act="del"><i class="ti ti-trash"></i></button></div><div class="pick"><select data-sec="'+sec+'" data-ii="'+ii+'" data-act="snackprod">'+optGroups(SRC,it.prod)+'</select></div>'+(custom?'<div class="snack-row"><span class="u">kcal/g:</span><input type="text" inputmode="decimal" autocomplete="off" data-sec="'+sec+'" data-ii="'+ii+'" data-act="snackkcal" value="'+(it.kcal||'')+'" placeholder="3.0"/></div>':'')+qtyHtml;}wrap.appendChild(div);});}
+
+function render(){renderMeals();renderSnackSection(treats,'treats-list','t');renderSnackSection(train,'train-list','r');attachFeed();calc();}
+
+function attachFeed(){document.querySelectorAll('#page-feed [data-act]').forEach(inp=>{if(inp.closest('details'))return;const ev=(inp.tagName==='SELECT')?'change':(inp.tagName==='INPUT'?'input':'click');inp.addEventListener(ev,()=>{const sec=inp.dataset.sec,ii=+inp.dataset.ii,act=inp.dataset.act;const arr=sec==='m'?meals:(sec==='t'?treats:train);const it=arr[ii];
+  if(act==='check'){it.done=!it.done;render();save();return;}
+  if(act==='name'){it.name=inp.value;save();return;}
+  if(act==='del'){arr.splice(ii,1);render();save();return;}
+  if(act==='cat'){it.cat=inp.value;it.prod=0;render();save();return;}
+  if(act==='prod'){it.prod=+inp.value;render();save();return;}
+  if(act==='basekcal'){it.baseKcal=inp.value;calc();save();return;}
+  if(act==='mixtoggle'){it.mix=!it.mix;render();save();return;}
+  if(act==='mixcat'){it.mixCat=inp.value;it.mixProd=0;render();save();return;}
+  if(act==='mixprod'){it.mixProd=+inp.value;render();save();return;}
+  if(act==='mixkcal'){it.mixKcal=inp.value;calc();save();return;}
+  if(act==='mixshare'){it.mixShare=+inp.value;render();save();return;}
+  if(act==='saucetoggle'){it.sauce=!it.sauce;render();save();return;}
+  if(act==='sauceg'){it.sauceG=+inp.value;render();save();return;}
+  if(act==='snackprod'){it.prod=+inp.value;it.qty=1;it.grams='';render();save();return;}
+  if(act==='snackkcal'){it.kcal=inp.value;calc();save();return;}
+  if(act==='snackg'){it.grams=inp.value;calc();save();return;}
+  if(act==='plus'){it.qty=(num(it.qty)||0)+1;render();save();return;}
+  if(act==='minus'){it.qty=Math.max(0,(num(it.qty)||0)-1);render();save();return;}
+});});}
+
+function calc(){const T=budgetTotal();if(!T){el('kcal-line').textContent='zadej váhu';el('left-line').textContent='zbývá —';el('treat-pct').textContent='—';el('treat-bar').style.width='0%';el('treat-note').textContent='limit 10 % (max 15 %)';el('treat-note').style.color='var(--ink2)';meals.forEach((it,ii)=>{const g=el('gm-'+ii);if(g&&!it.done)g.innerHTML='<div class="give-row"><span class="what">nasyp</span><span class="g">— g</span></div>';});return;}
+  const MB=mealsBudget();let consumed=0,treatKcal=0;
+  treats.forEach(it=>{it._kcal=snackKcal(it,TREATS);if(it.done){consumed+=it._kcal;treatKcal+=it._kcal;}});
+  train.forEach(it=>{it._kcal=snackKcal(it,TRAIN);if(it.done){consumed+=it._kcal;treatKcal+=it._kcal;}});
+  const doneMeals=meals.filter(m=>m.done);const undoneMeals=meals.filter(m=>!m.done);let doneMealKcal=0;doneMeals.forEach(m=>{if(m._plannedKcal===undefined){m._plannedKcal=MB/Math.max(1,meals.length);}doneMealKcal+=m._plannedKcal;});consumed+=doneMealKcal;const remainingForMeals=Math.max(0,MB-doneMealKcal);const perUndone=undoneMeals.length?remainingForMeals/undoneMeals.length:0;
+  meals.forEach((it,ii)=>{const list=it.cat==='gran'?GRAN:WET;const baseP=list[it.prod];const baseKcalPerG=(baseP&&baseP.kcal!==null)?baseP.kcal:(num(it.baseKcal)|| (it.cat==='gran'?3.7:1.9));const myKcal=it.done?(it._plannedKcal||perUndone):perUndone;if(!it.done)it._plannedKcal=perUndone;const g=el('gm-'+ii);if(!g)return;
+    const sauceG=it.sauce?(it.sauceG||0):0;const sauceKcal=sauceG*SAUCE_KCAL;
+    let afterSauce=Math.max(0,myKcal-sauceKcal);
+    let mixKcal=0,mixG=0,baseKcal=afterSauce;
+    if(it.mix){mixKcal=afterSauce*(it.mixShare/100);baseKcal=afterSauce-mixKcal;mixG=mixKcal/mixKcalPerG(it);}
+    const baseG=baseKcal/baseKcalPerG;
+    if(it.done){
+      const baseLabel=it.cat==='gran'?'Granule':'Vařené';let s='<span><i class="ti ti-check"></i> '+baseLabel+': '+list[it.prod].name;if(it.mix){const ml=mixList(it.mixCat);s+=' + '+ml[it.mixProd].name;}if(it.sauce&&sauceG>0)s+=' + omáčka '+sauceG+' g';s+='</span><span>'+Math.round(myKcal)+' kcal</span>';g.innerHTML=s;
+    }else{
+      const baseLabel=it.cat==='gran'?'granulí':'vařeného';let h='<div class="give-row"><span class="what">nasyp '+baseLabel+'</span><span class="g">'+Math.round(baseG)+' g</span></div>';
+      if(it.mix){const ml=mixList(it.mixCat);const mixLabel=it.mixCat==='can'?'konzervy':'vařeného';h+='<div class="give-sub"><span class="what">+ '+mixLabel+'</span><span class="g">'+Math.round(mixG)+' g</span></div>';}
+      if(it.sauce&&sauceG>0)h+='<div class="give-sub"><span class="what">+ omáčka</span><span class="g">'+sauceG+' g</span></div>';
+      g.innerHTML=h;
+    }
+  });
+  treats.forEach((it,ii)=>{const s=el('sk-t-'+ii);if(s)s.textContent=Math.round(it._kcal||0)+(it.done?' kcal':'');});
+  train.forEach((it,ii)=>{const s=el('sk-r-'+ii);if(s)s.textContent=Math.round(it._kcal||0)+(it.done?' kcal':'');});
+  el('kcal-line').textContent=Math.round(consumed)+' / '+Math.round(T)+' kcal';const pct=Math.min(100,consumed/T*100);const bar=el('bar');bar.style.width=pct+'%';bar.style.background=consumed>T?'var(--danger)':'var(--info)';const lft=T-consumed;el('left-line').textContent=lft>=0?('zbývá '+Math.round(lft)+' kcal'):('o '+Math.round(-lft)+' kcal víc');
+  const tpct=treatKcal/T*100;const cap10=T*0.10,cap15=T*0.15;const tbar=el('treat-bar'),tpctEl=el('treat-pct'),tnote=el('treat-note');tpctEl.textContent=Math.round(tpct)+' %';tbar.style.width=Math.min(100,tpct/15*100)+'%';let col,note;if(tpct<=10){col='var(--ok)';note='✓ v pohodě · do limitu ještě '+Math.round(cap10-treatKcal)+' kcal';}else if(tpct<=15){col='var(--warn)';note='⚠ blížíš se stropu · do 15 % zbývá '+Math.round(cap15-treatKcal)+' kcal';}else{col='var(--danger)';note='✕ přes limit o '+Math.round(treatKcal-cap15)+' kcal · uber pamlsky';}tbar.style.background=col;tpctEl.style.color=col;tnote.style.color=col;tnote.textContent=note;}
+
+function daysBetween(a,b){return Math.round((b-a)/86400000);}
+function addInterval(iso,n,unit){const d=new Date(iso+'T00:00:00');if(unit==='d')d.setDate(d.getDate()+n);else if(unit==='m')d.setMonth(d.getMonth()+n);else if(unit==='y')d.setFullYear(d.getFullYear()+n);return d.toISOString().slice(0,10);}
+function fmtDateFull(iso){const d=new Date(iso+'T00:00:00');return d.getDate()+'. '+(d.getMonth()+1)+'. '+d.getFullYear();}
+function healthStatus(h){if(!h.date)return{txt:'bez data',col:'var(--ink2)',bg:'var(--card)',days:9999};const today=new Date(todayISO()+'T00:00:00');const dd=daysBetween(today,new Date(h.date+'T00:00:00'));if(dd<0)return{txt:'po termínu',col:'var(--danger)',bg:'var(--warn-bg)',days:dd};if(dd===0)return{txt:'dnes!',col:'var(--danger)',bg:'var(--warn-bg)',days:0};if(dd<=7)return{txt:'za '+dd+' '+(dd===1?'den':(dd<5?'dny':'dní')),col:'var(--warn)',bg:'var(--warn-bg)',days:dd};if(dd<=30)return{txt:'za '+dd+' dní',col:'var(--ink)',bg:'var(--card)',days:dd};return{txt:fmtDateFull(h.date),col:'var(--ink2)',bg:'var(--card)',days:dd};}
+function renderHealth(){const up=el('health-upcoming'),list=el('health-list');const sorted=health.slice().sort((a,b)=>(a.date||'9999').localeCompare(b.date||'9999'));const soon=sorted.filter(h=>{const s=healthStatus(h);return s.days<=14;});if(soon.length){up.innerHTML='<div class="box" style="background:var(--warn-bg);border-color:var(--warn-line);margin-bottom:.5rem;"><p style="margin:0 0 8px;font-size:13px;font-weight:600;color:var(--warn);"><i class="ti ti-bell"></i> Blíží se</p>'+soon.map(h=>{const s=healthStatus(h);const t=HTYPES[h.type]||HTYPES.other;return '<div style="display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:13px;"><span>'+t.icon+' '+h.name+'</span><span style="color:'+s.col+';font-weight:600;">'+s.txt+'</span></div>';}).join('')+'</div>';}else{up.innerHTML='<div class="box" style="margin-bottom:.5rem;"><p style="margin:0;font-size:13px;color:var(--ink2);"><i class="ti ti-circle-check" style="color:var(--ok);"></i> Nic se v nejbližších dnech neblíží.</p></div>';}
+  if(!health.length){list.innerHTML='<p style="color:var(--ink3);font-size:13px;text-align:center;padding:1.5rem 0;">Zatím žádné záznamy.<br>Přidej očkování, odčervení, prášky…</p>';return;}
+  list.innerHTML=sorted.map(h=>{const realIdx=health.indexOf(h);const t=HTYPES[h.type]||HTYPES.other;const s=healthStatus(h);return '<div class="health-item"><div class="hi-top"><div class="hi-icon" style="background:'+t.bg+';">'+t.icon+'</div><div class="hi-body"><div class="hi-name">'+h.name+'</div><div class="hi-date">'+(h.date?fmtDateFull(h.date):'bez data')+(h.interval?' · à '+h.interval+(h.unit==='d'?' dní':h.unit==='y'?' let':' měs.'):'')+(h.note?' · '+h.note:'')+'</div></div><span class="hi-badge" style="color:'+s.col+';background:'+s.bg+';">'+s.txt+'</span></div><div style="display:flex;gap:8px;margin-top:10px;"><button data-hidx="'+realIdx+'" data-hact="done" style="flex:1;font-size:12px;'+(h.interval?'background:var(--ok-bg);color:var(--ok);border-color:var(--ok-line);':'')+'">'+(h.interval?'<i class="ti ti-check"></i> Hotovo → posunout':'<i class="ti ti-check"></i> Hotovo')+'</button><button data-hidx="'+realIdx+'" data-hact="edit" style="font-size:12px;"><i class="ti ti-pencil"></i> Upravit</button></div></div>';}).join('');
+  list.querySelectorAll('[data-hact]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.hidx,act=b.dataset.hact;if(act==='edit'){openHealthEdit(i);}else if(act==='done'){const h=health[i];if(h.interval&&h.date){h.date=addInterval(h.date,parseInt(h.interval),h.unit||'m');}else{health.splice(i,1);}renderHealth();save();}}));}
+let editingHealth=-1;
+function openHealthEdit(i){editingHealth=i;const h=i>=0?health[i]:{type:'vaccine',name:'',date:todayISO(),interval:'',unit:'m',note:''};el('health-sheet-title').textContent=i>=0?'Upravit záznam':'Nový záznam';el('he-type').value=h.type||'vaccine';el('he-name').value=h.name||'';el('he-date').value=h.date||'';el('he-int').value=h.interval||'';el('he-unit').value=h.unit||'m';el('he-note').value=h.note||'';el('he-delete').style.display=i>=0?'block':'none';el('health-overlay').style.display='flex';}
+el('add-health').addEventListener('click',()=>openHealthEdit(-1));
+el('close-health').addEventListener('click',()=>{el('health-overlay').style.display='none';});
+el('health-overlay').addEventListener('click',e=>{if(e.target.id==='health-overlay')el('health-overlay').style.display='none';});
+el('he-save').addEventListener('click',()=>{const obj={type:el('he-type').value,name:el('he-name').value||'Záznam',date:el('he-date').value,interval:el('he-int').value,unit:el('he-unit').value,note:el('he-note').value};if(editingHealth>=0)health[editingHealth]=obj;else health.push(obj);el('health-overlay').style.display='none';renderHealth();save();});
+el('he-delete').addEventListener('click',()=>{if(editingHealth>=0){health.splice(editingHealth,1);el('health-overlay').style.display='none';renderHealth();save();}});
+
+function renderNotes(){const wrap=el('notes-list');if(!notes.length){wrap.innerHTML='<p style="color:var(--ink3);font-size:13px;text-align:center;padding:1.5rem 0;">Zatím žádné poznámky.</p>';return;}wrap.innerHTML='';notes.forEach((n,ni)=>{const div=document.createElement('div');div.className='note-card';div.innerHTML='<div style="display:flex;align-items:flex-start;gap:8px;"><input class="note-title" data-ni="'+ni+'" data-nact="title" value="'+(n.title||'').replace(/"/g,'&quot;')+'" placeholder="Nadpis"/><button class="del" data-ni="'+ni+'" data-nact="del"><i class="ti ti-trash"></i></button></div><textarea class="note-body" data-ni="'+ni+'" data-nact="body" placeholder="Text…">'+(n.body||'')+'</textarea>';wrap.appendChild(div);});wrap.querySelectorAll('[data-nact]').forEach(inp=>{const ev=inp.tagName==='BUTTON'?'click':'input';inp.addEventListener(ev,()=>{const ni=+inp.dataset.ni,act=inp.dataset.nact;if(act==='title'){notes[ni].title=inp.value;save();}else if(act==='body'){notes[ni].body=inp.value;save();}else if(act==='del'){notes.splice(ni,1);renderNotes();save();}});});}
+el('add-note').addEventListener('click',()=>{notes.push({title:'',body:''});renderNotes();save();});
+
+el('reset-day').addEventListener('click',()=>{if(confirm('Uložit dnešní den do historie a začít nový?')){archiveDay();clearDay();state.dayDate=todayISO();render();save();}});
+el('open-history').addEventListener('click',()=>{renderHistory();el('history-overlay').style.display='flex';});
+el('close-history').addEventListener('click',()=>{el('history-overlay').style.display='none';});
+el('history-overlay').addEventListener('click',e=>{if(e.target.id==='history-overlay')el('history-overlay').style.display='none';});
+el('add-meal').addEventListener('click',()=>{meals.push({name:'Další jídlo',cat:'gran',prod:0,mix:false,mixCat:'can',mixProd:0,mixKcal:'',mixShare:25,sauce:false,sauceG:15,done:false});render();save();});
+el('add-treat').addEventListener('click',()=>{treats.push({name:'Dobrůtka',prod:0,qty:1,grams:'',done:false});render();save();});
+el('add-train').addEventListener('click',()=>{train.push({name:'Výcvik',prod:0,qty:1,grams:'',done:false});render();save();});
+['cur-w','neutered','reserve','activity','bcs'].forEach(id=>{el(id).addEventListener('input',()=>{verdict();render();if(el('water-val'))renderWater();save();});el(id).addEventListener('change',()=>{verdict();render();if(el('water-val'))renderWater();save();});});
+
+// weight log + graph
+el('save-weight').addEventListener('click',()=>{const w=num(el('cur-w').value);if(!w)return;const t=todayISO();state.weightLog=state.weightLog||[];state.weightLog=state.weightLog.filter(e=>e.date!==t);state.weightLog.push({date:t,w:Math.round(w*10)/10});state.weightLog.sort((a,b)=>a.date.localeCompare(b.date));if(state.weightLog.length>200)state.weightLog=state.weightLog.slice(-200);save();renderWeightGraph();});
+function renderWeightGraph(){const box=el('weight-graph');const log=state.weightLog||[];if(log.length<2){box.innerHTML='<p style="color:var(--ink3);font-size:12px;text-align:center;padding:1rem 0;">'+(log.length?'Zatím jeden záznam ('+log[0].w+' kg). Zapiš váhu i jindy a uvidíš křivku.':'Zatím žádný záznam. U váhy klikni „Zapsat".')+'</p>';el('wgraph-latest').textContent=log.length?('poslední '+log[log.length-1].w+' kg'):'';return;}
+  const W=300,H=120,pad=24;const ws=log.map(e=>e.w);const mn=Math.min(...ws),mx=Math.max(...ws);const range=(mx-mn)||1;const n=log.length;
+  const x=i=>pad+(i/(n-1))*(W-2*pad);const y=v=>H-pad-((v-mn)/range)*(H-2*pad);
+  let pts=log.map((e,i)=>x(i)+','+y(e.w)).join(' ');
+  let dots=log.map((e,i)=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(e.w).toFixed(1)+'" r="2.5" fill="var(--info)"/>').join('');
+  const first=log[0],last=log[log.length-1];
+  box.innerHTML='<svg viewBox="0 0 '+W+' '+H+'" style="width:100%;height:auto;">'
+    +'<polyline points="'+pts+'" fill="none" stroke="var(--info)" stroke-width="2"/>'+dots
+    +'<text x="'+pad+'" y="'+(H-4)+'" fill="var(--ink3)" font-size="9">'+fmtDate(first.date)+'</text>'
+    +'<text x="'+(W-pad)+'" y="'+(H-4)+'" fill="var(--ink3)" font-size="9" text-anchor="end">'+fmtDate(last.date)+'</text>'
+    +'<text x="2" y="12" fill="var(--ink3)" font-size="9">'+mx.toFixed(1)+' kg</text>'
+    +'<text x="2" y="'+(H-pad+3)+'" fill="var(--ink3)" font-size="9">'+mn.toFixed(1)+'</text>'
+    +'</svg>';
+  el('wgraph-latest').textContent='poslední '+last.w+' kg';}
+
+// water
+function renderWater(){const v=state.water||0;el('water-val').textContent=v+' ml';const w=num(el('cur-w').value)||0;if(w){const lo=Math.round(w*50),hi=Math.round(w*70);el('water-note').textContent='+100 ml/klik · pro '+w+' kg orientačně '+lo+'–'+hi+' ml/den';}}
+el('water-plus').addEventListener('click',()=>{state.water=(state.water||0)+100;renderWater();save();});
+el('water-minus').addEventListener('click',()=>{state.water=Math.max(0,(state.water||0)-100);renderWater();save();});
+
+// photos (growth diary) — stored as compressed dataURLs in localStorage
+el('add-photo').addEventListener('click',()=>el('photo-input').click());
+el('photo-input').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=ev=>{const img=new Image();img.onload=()=>{const max=480;let w=img.width,h=img.height;if(w>h&&w>max){h=h*max/w;w=max;}else if(h>max){w=w*max/h;h=max;}const cv=document.createElement('canvas');cv.width=w;cv.height=h;cv.getContext('2d').drawImage(img,0,0,w,h);const data=cv.toDataURL('image/jpeg',0.7);state.photos=state.photos||[];state.photos.unshift({date:todayISO(),img:data});if(state.photos.length>60)state.photos=state.photos.slice(0,60);save();renderPhotos();};img.src=ev.target.result;};rd.readAsDataURL(f);el('photo-input').value='';});
+function renderPhotos(){const wrap=el('photos-list');const ph=state.photos||[];if(!ph.length){wrap.innerHTML='<p style="color:var(--ink3);font-size:12px;padding:.5rem 0;">Zatím žádné fotky. Přidej první a sleduj, jak Igor roste.</p>';return;}wrap.innerHTML=ph.map((p,i)=>'<div style="flex:0 0 auto;text-align:center;"><img src="'+p.img+'" style="width:90px;height:90px;object-fit:cover;border-radius:10px;border:1px solid var(--line);" data-pi="'+i+'" data-pact="view"/><div style="font-size:10px;color:var(--ink3);margin-top:2px;">'+fmtDate(p.date)+'</div><button data-pi="'+i+'" data-pact="del" style="font-size:10px;padding:2px 6px;color:var(--danger);border:none;background:none;">smazat</button></div>').join('');wrap.querySelectorAll('[data-pact]').forEach(b=>b.addEventListener('click',()=>{const i=+b.dataset.pi,act=b.dataset.pact;if(act==='del'){if(confirm('Smazat fotku?')){state.photos.splice(i,1);save();renderPhotos();}}else{window.open(state.photos[i].img,'_blank');}}));}
+
+document.querySelectorAll('.tabbtn').forEach(b=>b.addEventListener('click',()=>{const tab=b.dataset.tab;document.querySelectorAll('.tabbtn').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));el('page-'+tab).classList.add('active');if(tab==='health'){renderHealth();renderWeightGraph();renderPhotos();}if(tab==='notes')renderNotes();window.scrollTo(0,0);}));
+
+// settings panel
+el('open-settings').addEventListener('click',()=>{el('settings-overlay').style.display='flex';});
+el('close-settings').addEventListener('click',()=>{el('settings-overlay').style.display='none';});
+el('settings-overlay').addEventListener('click',e=>{if(e.target.id==='settings-overlay')el('settings-overlay').style.display='none';});
+document.querySelectorAll('.go-link').forEach(b=>b.addEventListener('click',()=>{const go=b.dataset.go;el('settings-overlay').style.display='none';
+  if(go==='history'){renderHistory();el('history-overlay').style.display='flex';return;}
+  // switch to health tab and optionally scroll to graph/photos
+  const hb=[...document.querySelectorAll('.tabbtn')].find(x=>x.dataset.tab==='health');hb.click();
+  setTimeout(()=>{if(go==='graph'){el('weight-graph').scrollIntoView({behavior:'smooth',block:'center'});}else if(go==='photos'){el('photos-list').scrollIntoView({behavior:'smooth',block:'center'});}},100);
+}));
+
+setInterval(checkDayRollover,60*1000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)checkDayRollover();});
+
+load();loadHistory();
+verdict();render();renderHealth();renderNotes();renderWater();renderWeightGraph();renderPhotos();checkDayRollover();
+</script>
+</body>
+</html>
